@@ -1,0 +1,8 @@
+{
+  "name": "Historical Stock Opportunity & Rebound Research Engine",
+  "description": "A quantitative historical research dashboard for analyzing 1,131 Indian equities using deterministic, data-driven historical analysis and AI-assisted interpretation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

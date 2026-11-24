@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Historical Stock Opportunity &amp; Rebound Research Engine</title>
+    <meta name="description" content="A quantitative historical research dashboard for analyzing 1,131 Indian equities using deterministic, data-driven historical analysis and AI-assisted interpretation." />
+    <meta property="og:title" content="Historical Stock Opportunity &amp; Rebound Research Engine" />
+    <meta property="og:description" content="A quantitative historical research dashboard for analyzing 1,131 Indian equities using deterministic, data-driven historical analysis and AI-assisted interpretation." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      // Suppress benign third-party browser extension errors (e.g. MetaMask/Web3 wallet inpage injection)
+      (function() {
+        function isExtensionError(msg, src, stack) {
+          var str = ((msg || '') + ' ' + (src || '') + ' ' + (stack || '')).toLowerCase();
+          return (
+            str.indexOf('metamask') !== -1 ||
+            str.indexOf('nkbihfbeogaeaoehlefnkodbefgpgknn') !== -1 ||
+            str.indexOf('chrome-extension://') !== -1 ||
+            str.indexOf('moz-extension://') !== -1 ||
+            str.indexOf('inpage.js') !== -1 ||
+            str.indexOf('failed to connect to metamask') !== -1
+          );
+        }
+
+        window.addEventListener(
+          'unhandledrejection',
+          function(e) {
+            var reason = e ? e.reason : null;
+            var msg = reason ? (reason.message || reason) : '';
+            var stack = reason ? reason.stack : '';
+            if (isExtensionError(msg, '', stack)) {
+              e.preventDefault();
+              e.stopImmediatePropagation();
+            }
+          },
+          true
+        );
+
+        window.addEventListener(
+          'error',
+          function(e) {
+            var msg = e ? e.message : '';
+            var filename = e ? e.filename : '';
+            var stack = e && e.error ? e.error.stack : '';
+            if (isExtensionError(msg, filename, stack)) {
+              e.preventDefault();
+              e.stopImmediatePropagation();
+              return true;
+            }
+          },
+          true
+        );
+      })();
+    </script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
